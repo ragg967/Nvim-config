@@ -1,7 +1,10 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		vim.lsp.enable('lua_ls')
+		local lsps = { "lua_ls", "clangd", "pyright", "taplo", "zls" }
+
+		for _, lsp in ipairs(lsps) do
+			vim.lsp.enable(lsp)
+		end
 	end
 }
-
