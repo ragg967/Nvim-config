@@ -11,8 +11,8 @@ return {
 				null_ls.builtins.formatting.clangd,
 				null_ls.builtins.formatting.taplo,
 				null_ls.builtins.formatting.zls,
-				null_ls.nuiltins.diagnostics.eslint_d,
-				null_ls.nuiltins.diagnostics.ruff,
+				null_ls.builtins.diagnostics.eslint_d,
+				null_ls.builtins.diagnostics.ruff,
 			},
 		})
 	end,
