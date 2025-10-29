@@ -1,14 +1,16 @@
 local keymap = vim.keymap.set
 
--- Telescope keybinds
-keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
-keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = 'Live grep' })
-keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find buffers' })
-keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Help tags' })
+-- Mini pick
+keymap('n', '<leader>ff', '<cmd>Pick files<cr>', { desc = 'Find files' })
+keymap('n', '<leader>fg', '<cmd>Pick grep_live<cr>', { desc = 'Live grep' })
+keymap('n', '<leader>fb', '<cmd>Pick buffers<cr>', { desc = 'Find buffers' })
+keymap('n', '<leader>fh', '<cmd>Pick help<cr>', { desc = 'Help tags' })
+keymap('n', '<leader>fr', '<cmd>Pick resume<cr>', { desc = 'Resume last picker' })
+keymap('n', '<leader>/', '<cmd>Pick buf_lines<cr>', { desc = 'Search buffer lines' })
 
--- Oil
-keymap('n', '<leader>e', '<cmd>Oil<cr>', { desc = 'Open file explorer' })
-keymap('n', '-', '<cmd>Oil<cr>', { desc = 'Open parent directory' })
+-- Mini.files
+keymap('n', '<leader>e', '<cmd>lua MiniFiles.open()<cr>', { desc = 'Open file explorer' })
+keymap('n', '-', '<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>', { desc = 'Open parent directory' })
 
 -- Lsp
 keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Hover' })

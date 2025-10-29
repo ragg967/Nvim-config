@@ -1,5 +1,8 @@
 return {
 	"nvimtools/none-ls.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim", -- Add this dependency
+	},
 	config = function()
 		local null_ls = require("null-ls")
 
